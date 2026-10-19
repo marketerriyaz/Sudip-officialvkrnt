@@ -1,172 +1,309 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gautam Jha  - Market Expert</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2894892230879725');
+    fbq('track', 'PageView');
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '25740548248911509');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=25740548248911509&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join Telegram Channel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    // Custom Helper Function for Tracking Telegram Subscription
+    function trackSubscriber(channelName) {
+        if (typeof fbq === 'function') {
+            fbq('track', 'Subscribe', {
+                content_name: channelName || 'Telegram Channel',
+                status: 'subscribed'
+            });
+        }
     }
-    .elementor img {
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    height: auto;
-    max-width: 100%;
-    border-radius: 90px;
-}
-    .card {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 1rem;
-      padding: 2rem;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-    .btn-telegram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0.8rem 1.2rem;
-      border-radius: 0.75rem;
-      font-weight: bold;
-      color: white;
-      background: linear-gradient(90deg, #0088cc, #00bcd4);
-      transition: 0.3s;
-      width: 100%;
-    }
-    .btn-telegram:hover {
-      background: linear-gradient(90deg, #00bcd4, #0088cc);
-      transform: translateY(-2px);
-    }
-    .feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 6px;
-      font-size: 0.95rem;
-    }
-  </style>
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2894892230879725&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .btn-glow {
+            box-shadow: 0 4px 14px rgba(10, 102, 228, 0.35);
+            transition: all 0.2s ease;
+        }
+        .btn-glow:active {
+            transform: scale(0.98);
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .pulse-dot {
+            animation: pulse-ring 1.8s infinite ease-in-out;
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col justify-between text-gray-800 antialiased selection:bg-blue-100">
 
-  <div class="card">
-    <!-- Profile Image -->
-    <div class="w-32 h-32 mx-auto mb-4 ">
-      <img src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2025/09/rochit.jpg" alt="Profile" class="w-full h-full rounded-full object-cover shadow-lg border-4 border-white rounded-xxl">
+    <!-- Compact Header -->
+    <header class="w-full bg-white border-b border-gray-100 py-2 px-3 sm:px-6 flex justify-between items-center shadow-xs sticky top-0 z-40">
+        <div class="flex items-center space-x-2">
+            <img src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2026/10/sudp.jpg" 
+                 alt="Logo" 
+                 class="w-7 h-7 rounded-full object-cover border border-blue-500 shadow-xs"
+                 onerror="this.src='https://placehold.co/80x80/0a66e4/ffffff?text=PB';">
+            <div>
+                <span class="font-extrabold text-gray-900 text-xs sm:text-sm block leading-tight tracking-tight">Stock Learner</span>
+                <span class="text-[9px] text-blue-600 font-bold uppercase leading-none block">Market Expert</span>
+            </div>
+        </div>
+        
+        <a href="https://t.me/+FP3HPX71VYs5OGY9" target="_blank" onclick="trackSubscriber('Header Telegram Join')" class="inline-flex items-center px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-600 font-bold text-[11px] rounded-full transition">
+            <i class="fa-brands fa-telegram text-xs mr-1 text-blue-500"></i> Join
+        </a>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow flex items-center justify-center px-3 py-4 sm:py-6">
+        <div class="w-full max-w-[420px] bg-transparent flex flex-col items-center text-center space-y-3.5">
+
+            <!-- Online Badge -->
+            <div class="inline-flex items-center space-x-1.5 bg-emerald-50 text-emerald-700 text-[11px] font-bold px-3 py-1 rounded-full border border-emerald-200/80 shadow-xs">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full pulse-dot"></span>
+                <span>5,947 Traders Online</span>
+            </div>
+
+            <!-- Profile Image & Title -->
+            <div class="flex flex-col items-center space-y-1.5">
+                <div class="relative">
+                    <div class="w-20 h-20 rounded-full p-0.5 bg-gradient-to-tr from-blue-500 to-indigo-600 shadow-sm">
+                        <img src="https://telegram-ads.riyazshaikh.com/wp-content/uploads/2026/10/sudp.jpg" 
+                             alt="Sudip Brahmachary Profile" 
+                             class="w-full h-full object-cover rounded-full border border-white"
+                             onerror="this.src='https://placehold.co/200x200/1e293b/ffffff?text=Pankaj';">
+                    </div>
+                </div>
+
+                <div>
+                    <h1 class="text-xl font-black text-gray-900 tracking-tight uppercase leading-tight">RESEARCH ANALYST SUDIP BRAHMACHARY OFFICIAL™</h1>
+                    <p class="text-blue-600 font-bold text-xs mt-0.5 flex items-center justify-center gap-1">
+                        <span>🏆</span> India's No.1 Stock Market Channel
+                    </p>
+                </div>
+
+                <!-- Rating -->
+                <div class="flex flex-col items-center">
+                    <div class="flex text-amber-400 space-x-0.5 text-xs">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-[10px] font-semibold text-gray-500 mt-0.5">4.9/5 (2,340 Reviews)</p>
+                </div>
+            </div>
+
+            <!-- Primary CTA Button -->
+            <a href="https://t.me/+FP3HPX71VYs5OGY9" target="_blank" onclick="trackSubscriber('Primary CTA Button')" class="w-full py-3 px-4 bg-[#0a66e4] hover:bg-[#0855c4] active:bg-[#0747a6] text-white font-extrabold text-sm rounded-xl btn-glow flex items-center justify-center space-x-2 transition">
+                <span>Join Free Telegram Channel</span>
+                <span class="text-base">→</span>
+            </a>
+
+            <!-- Compact Stats Grid -->
+            <div class="grid grid-cols-3 gap-2 w-full">
+                <div class="bg-white py-2 px-1 rounded-xl border border-gray-100 shadow-xs flex flex-col items-center justify-center">
+                    <span class="text-base font-black text-gray-900">50K+</span>
+                    <span class="text-[10px] font-medium text-gray-500">Members</span>
+                </div>
+                <div class="bg-white py-2 px-1 rounded-xl border border-gray-100 shadow-xs flex flex-col items-center justify-center">
+                    <span class="text-base font-black text-gray-900">5+</span>
+                    <span class="text-[10px] font-medium text-gray-500">Years</span>
+                </div>
+                <div class="bg-white py-2 px-1 rounded-xl border border-gray-100 shadow-xs flex flex-col items-center justify-center">
+                    <span class="text-base font-black text-gray-900">95%</span>
+                    <span class="text-[10px] font-medium text-gray-500">Accuracy</span>
+                </div>
+            </div>
+
+            <!-- Headline Section -->
+            <div class="space-y-0.5 pt-1">
+                <h2 class="text-base font-black text-gray-900 leading-snug">
+                    Get <span class="text-blue-600 uppercase">FREE</span> Daily Calls
+                </h2>
+                <p class="text-xs font-bold text-gray-700">
+                    for NIFTY, BANKNIFTY & SENSEX
+                </p>
+                <p class="text-[10px] text-gray-500 font-medium pt-0.5">
+                    Join thousands of traders getting daily market analysis
+                </p>
+            </div>
+
+            <!-- Limited Offer Banner -->
+            <div class="w-full bg-amber-50/90 border border-amber-200/80 rounded-xl py-2 px-3 flex items-center justify-center text-amber-800 font-bold text-xs shadow-xs">
+                <span>🔥 Limited FREE Access Available</span>
+            </div>
+
+            <!-- Feature List -->
+            <div class="w-full space-y-2">
+                <div class="w-full bg-white p-2.5 rounded-xl border border-gray-100 shadow-xs flex items-center space-x-2.5 text-left">
+                    <span class="text-base">📊</span>
+                    <span class="font-bold text-gray-800 text-xs">Daily Nifty & BankNifty Levels</span>
+                </div>
+                <div class="w-full bg-white p-2.5 rounded-xl border border-gray-100 shadow-xs flex items-center space-x-2.5 text-left">
+                    <span class="text-base">🎓</span>
+                    <span class="font-bold text-gray-800 text-xs">Educational Market Analysis</span>
+                </div>
+                <div class="w-full bg-white p-2.5 rounded-xl border border-gray-100 shadow-xs flex items-center space-x-2.5 text-left">
+                    <span class="text-base">👥</span>
+                    <span class="font-bold text-gray-800 text-xs">50,000+ Subscribers Community</span>
+                </div>
+            </div>
+
+            <!-- Secondary CTA Button -->
+            <a href="https://t.me/+FP3HPX71VYs5OGY9" target="_blank" onclick="trackSubscriber('Secondary CTA Button')" class="w-full py-3 px-4 bg-[#0a66e4] hover:bg-[#0855c4] active:bg-[#0747a6] text-white font-extrabold text-sm rounded-xl btn-glow flex items-center justify-center space-x-2 transition">
+                <span>Join Free Telegram Channel</span>
+                <span class="text-base">→</span>
+            </a>
+
+            <!-- Brief Inline Disclaimer -->
+            <p class="text-[10px] text-gray-400 leading-tight px-2 pt-1">
+                <strong class="font-semibold text-gray-500">Disclaimer:</strong>
+                This channel is for educational purposes only. Trading involves market risk.
+            </p>
+
+        </div>
+    </main>
+
+    <!-- Compact Footer Section -->
+    <footer class="w-full bg-white border-t border-gray-200 py-3 px-3 mt-4">
+        <div class="max-w-md mx-auto flex flex-col items-center space-y-2">
+            <!-- Navigation Links -->
+            <div class="flex flex-wrap justify-center gap-2.5 text-[11px] font-bold text-gray-600">
+                <button onclick="openModal('aboutModal')" class="hover:text-blue-600 active:text-blue-700 transition">About Us</button>
+                <span class="text-gray-300">•</span>
+                <button onclick="openModal('termsModal')" class="hover:text-blue-600 active:text-blue-700 transition">Terms</button>
+                <span class="text-gray-300">•</span>
+                <button onclick="openModal('disclaimerModal')" class="hover:text-blue-600 active:text-blue-700 transition">Disclaimer</button>
+                <span class="text-gray-300">•</span>
+                <button onclick="openModal('contactModal')" class="hover:text-blue-600 active:text-blue-700 transition">Contact Us</button>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-[10px] text-gray-400 text-center">
+                &copy; <span id="year"></span> All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS FOR FOOTER LINKS -->
+    
+    <!-- About Us Modal -->
+    <div id="aboutModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-3">
+        <div class="bg-white w-full max-w-sm rounded-2xl p-5 shadow-2xl relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('aboutModal')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-lg font-bold w-7 h-7 flex items-center justify-center rounded-full bg-gray-100">&times;</button>
+            <h3 class="text-base font-extrabold text-gray-900 mb-2 border-b border-gray-100 pb-2">About Us</h3>
+            <div class="text-xs text-gray-600 space-y-2 leading-relaxed">
+                <p>Welcome to Pankaj Bhardwaj Stock Market Channel, one of India's premier online trading communities.</p>
+                <p>With 5+ years of stock market experience, Pankaj Bhardwaj shares technical research, intraday levels for NIFTY, BANKNIFTY & SENSEX, and market guidance.</p>
+            </div>
+            <button onclick="closeModal('aboutModal')" class="mt-4 w-full py-2 bg-blue-600 text-white font-bold rounded-xl text-xs hover:bg-blue-700">Got it</button>
+        </div>
     </div>
 
-    <!-- Heading -->
-    <h1 class="text-xl font-extrabold text-gray-800 mb-1">
-    TRADE WITH ROCHIT SINGH 💸🏆
-    </h1>
-
-    <!-- Experience -->
-    <p class="text-red-600 font-semibold mb-4">📊 Experience Tr@der 📊</p>
-
-    <!-- CTA Button -->
-    <a href="https://www.t.me/+Is1eyDtx41tkZTAx" target="_blank" class="btn-telegram mb-6">
-
-      
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.79 10.89l-.27 3.67c.39 0 .56-.17.77-.38l1.85-1.76 3.84 2.8c.7.39 1.19.19 1.36-.65l2.47-11.59c.22-.98-.35-1.37-1.05-1.14L1.13 6.24c-.95.37-.93.9-.17 1.14l3.57 1.11 8.3-5.23c.39-.26.74-.12.45.14L6.79 10.89z"/>
-      </svg>
-      JOIN TELEGRAM 💬
-    </a>
-
-    <!-- Features -->
-    <p class="text-red-600 font-bold mb-4">💎 DAILY PROFIT GURANTEE 💎</p>
-    <div class="text-left space-y-3 text-gray-800 mb-6">
-      <div class="feature">📊 <span><b>Live Daily Trades</b> – From my portfolio to yours!</span></div>
-      <div class="feature">🔥 <span><b>Exclusive Signals</b> – Get the same trades I take!</span></div>
-      <div class="feature">💯 <span><b>High Accuracy</b> – Consistent proven strategy!</span></div>
-      <div class="feature">💡 <span><b>Real-Time Updates</b> – Instant market alerts!</span></div>
+    <!-- Terms Modal -->
+    <div id="termsModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-3">
+        <div class="bg-white w-full max-w-sm rounded-2xl p-5 shadow-2xl relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('termsModal')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-lg font-bold w-7 h-7 flex items-center justify-center rounded-full bg-gray-100">&times;</button>
+            <h3 class="text-base font-extrabold text-gray-900 mb-2 border-b border-gray-100 pb-2">Terms & Conditions</h3>
+            <div class="text-xs text-gray-600 space-y-2 leading-relaxed">
+                <p><strong>1. Educational Content:</strong> All trade setups and commentary provided are strictly for educational purposes.</p>
+                <p><strong>2. No Guarantee:</strong> Past performance does not guarantee future results. Trading involves financial risks.</p>
+                <p><strong>3. Responsibility:</strong> Users are solely responsible for their investment decisions and capital.</p>
+            </div>
+            <button onclick="closeModal('termsModal')" class="mt-4 w-full py-2 bg-blue-600 text-white font-bold rounded-xl text-xs hover:bg-blue-700">Accept</button>
+        </div>
     </div>
 
-    <!-- Hindi Section -->
-    <h2 class="text-lg font-bold text-gray-800 mb-2">क्या आप ट्रेडिंग से पैसे कमाना चाहते हैं?</h2>
-    <p class="text-red-600 font-semibold">
-      अगर हां तो दिए गए टेलीग्राम बटन पर दबाएं !
-    </p>
-  </div>
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-3">
+        <div class="bg-white w-full max-w-sm rounded-2xl p-5 shadow-2xl relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('disclaimerModal')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-lg font-bold w-7 h-7 flex items-center justify-center rounded-full bg-gray-100">&times;</button>
+            <h3 class="text-base font-extrabold text-gray-900 mb-2 border-b border-gray-100 pb-2">Disclaimer</h3>
+            <div class="text-xs text-gray-600 space-y-2 leading-relaxed">
+                <p><strong>Educational Purpose Only:</strong> We are not SEBI registered advisors. Trading in Options and Equities carries significant financial risk.</p>
+                <p>Please consult a certified financial advisor before placing real financial trades.</p>
+            </div>
+            <button onclick="closeModal('disclaimerModal')" class="mt-4 w-full py-2 bg-blue-600 text-white font-bold rounded-xl text-xs hover:bg-blue-700">I Understand</button>
+        </div>
+    </div>
 
+    <!-- Contact Us Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-3">
+        <div class="bg-white w-full max-w-sm rounded-2xl p-5 shadow-2xl relative max-h-[80vh] overflow-y-auto">
+            <button onclick="closeModal('contactModal')" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-lg font-bold w-7 h-7 flex items-center justify-center rounded-full bg-gray-100">&times;</button>
+            <h3 class="text-base font-extrabold text-gray-900 mb-2 border-b border-gray-100 pb-2">Contact Us</h3>
+            <div class="text-xs text-gray-600 space-y-2.5 leading-relaxed">
+                <p>Have questions? Reach out to our support team:</p>
+                <div class="bg-gray-50 p-2.5 rounded-xl border border-gray-200 space-y-1.5">
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-blue-600"></i>
+                        <span><strong>Email:</strong> support@pankajbhardwaj.com</span>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-brands fa-telegram text-blue-500"></i>
+                        <span><strong>Telegram:</strong> <a href="https://t.me/+FP3HPX71VYs5OGY9" target="_blank" onclick="trackSubscriber('Contact Modal Telegram')" class="text-blue-600 underline font-bold">Official Support</a></span>
+                    </p>
+                </div>
+            </div>
+            <button onclick="closeModal('contactModal')" class="mt-4 w-full py-2 bg-blue-600 text-white font-bold rounded-xl text-xs hover:bg-blue-700">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Modal Handler Functions
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking backdrop
+        window.onclick = function(event) {
+            const modals = ['aboutModal', 'termsModal', 'disclaimerModal', 'contactModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (event.target === modal) {
+                    closeModal(modalId);
+                }
+            });
+        };
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
